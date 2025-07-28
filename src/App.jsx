@@ -9,13 +9,13 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchCoins() {
       try {
         const response = await fetch(API_URL);
 
         if (!response.ok) throw new Error('Failed to fetch data');
-        const data = await response.json();
 
+        const data = await response.json();
         console.log(data);
         setCoins(data);
       } catch (error) {
@@ -24,12 +24,27 @@ function App() {
         setLoading(false);
       }
     }
-    fetchData();
+
+    fetchCoins();
   }, []);
 
   return (
     <div>
       <h1>💰 ₵rypto</h1>
+      {loading && <p>Loading...</p>}
+      {error && <div className='error'>{error}</div>}
+
+      <main className='grid'>
+        {coins.map((coin) => (
+          <div className='coin-card' key={coin.id}>
+            <div className='coin-header'>
+              <img src={coin.image} alt={coin.name} className='coin-image' />
+              <h2>{coin.name}</h2>
+              <p className='symbol'>{coin.symbol.toUpperCase()}</p>
+            </div>
+          </div>
+        ))}
+      </main>
     </div>
   );
 }
