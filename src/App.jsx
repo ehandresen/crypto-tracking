@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const API_URL =
-  'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -11,7 +10,9 @@ function App() {
   useEffect(() => {
     async function fetchCoins() {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(
+          `${API_URL}&order=market_cap_desc&per_page=10&page=1&sparkline=false`
+        );
 
         if (!response.ok) throw new Error('Failed to fetch data');
 
