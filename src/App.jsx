@@ -11,6 +11,7 @@ function App() {
   const [error, setError] = useState(null);
   const [limit, setLimit] = useState(10);
   const [filter, setFilter] = useState('');
+  const [sortBy, setSortBy] = useState('market_cap_desc');
 
   useEffect(() => {
     async function fetchCoins() {
@@ -22,7 +23,7 @@ function App() {
         if (!response.ok) throw new Error('Failed to fetch data');
 
         const data = await response.json();
-        console.log(data);
+
         setCoins(data);
       } catch (error) {
         setError(error.message);

@@ -2,8 +2,10 @@
   ✔ filter state @done(12-09-25 04:46)
   ✔ add selct box,  div class = 'controls' @done(12-09-25 04:46)
 
-☐ Filter coins by name
+✔ Filter coins by name @done(12-09-25 14:52)
   ✔ filter state @done(12-09-25 08:48)
   ✔ filterinput component, takes in filter and onfilterchange @done(12-09-25 08:53)
     ✔ returns div classname = filter @done(12-09-25 08:53)
   ✔ place component inn main app inside a div classname = top-controls @done(12-09-25 09:11)
+
+☐ sortselector component, takes inn sortby, onsortchange
