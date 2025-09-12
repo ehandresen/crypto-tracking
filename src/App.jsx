@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import CoinCard from './components/CoinCard';
 import LimitSelector from './components/LimitSelector';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -41,13 +42,7 @@ function App() {
 
       <main className='grid'>
         {coins.map((coin) => (
-          <div className='coin-card' key={coin.id}>
-            <div className='coin-header'>
-              <img src={coin.image} alt={coin.name} className='coin-image' />
-              <h2>{coin.name}</h2>
-              <p className='symbol'>{coin.symbol.toUpperCase()}</p>
-            </div>
-          </div>
+          <CoinCard key={coin.id} coin={coin} />
         ))}
       </main>
     </div>
