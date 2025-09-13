@@ -16,7 +16,7 @@ be able to sort coin list by diffrent options
 
   ☐ create pages folder with 3 pages: 
     ✔ home @done(13-09-25 11:42)
-    ☐ about
+    ✔ about @done(13-09-25 12:16)
     ☐ error
 
 Homepage:
@@ -25,3 +25,13 @@ Homepage:
   ✔ cut filteredcoins logic from App to homapge @done(13-09-25 11:28)
   ✔ same with the whole return @done(13-09-25 11:29)
   ✔ add homepage route to App @done(13-09-25 11:41)
+
+  About:
+    ✔ div class about @done(13-09-25 12:04)
+    ✔ h1 crypto @done(13-09-25 12:04)
+    ✔ add 3 paragraphs of static text @done(13-09-25 12:04)
+    ✔ add route to main app @done(13-09-25 12:09)
+
+✔ create simple header component for the navigation links @done(13-09-25 12:13)
+✔ wrap the header around all the routes @done(13-09-25 12:13)
+✔ add Link from react router to header@done(13-09-25 12:13)
