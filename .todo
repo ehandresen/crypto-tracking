@@ -8,4 +8,8 @@
     ✔ returns div classname = filter @done(12-09-25 08:53)
   ✔ place component inn main app inside a div classname = top-controls @done(12-09-25 09:11)
 
-☐ sortselector component, takes inn sortby, onsortchange
+be able to sort coin list by diffrent options
+✔ sortselector component, takes inn sortby, onsortchange @done(13-09-25 07:34)
+  ✔ -> returns div classname controls @done(13-09-25 07:34)
+  ✔ price_desc, change_desc -> asc @done(13-09-25 07:38)
+  ✔ add to main app component @done(13-09-25 10:16)
