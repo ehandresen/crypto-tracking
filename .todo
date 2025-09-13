@@ -13,3 +13,15 @@ be able to sort coin list by diffrent options
   ✔ -> returns div classname controls @done(13-09-25 07:34)
   ✔ price_desc, change_desc -> asc @done(13-09-25 07:38)
   ✔ add to main app component @done(13-09-25 10:16)
+
+  ☐ create pages folder with 3 pages: 
+    ✔ home @done(13-09-25 11:42)
+    ☐ about
+    ☐ error
+
+Homepage:
+  ✔ props: coins, filter, setfilter, limit, setlimit, sortby, setsortby, loading, error @done(13-09-25 11:26)
+  ✔ add imports, remove imports from App @done(13-09-25 11:28)
+  ✔ cut filteredcoins logic from App to homapge @done(13-09-25 11:28)
+  ✔ same with the whole return @done(13-09-25 11:29)
+  ✔ add homepage route to App @done(13-09-25 11:41)
