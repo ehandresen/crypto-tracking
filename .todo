@@ -26,7 +26,7 @@ Homepage:
   ✔ same with the whole return @done(13-09-25 11:29)
   ✔ add homepage route to App @done(13-09-25 11:41)
 
-  About:
+Aboutpage:
     ✔ div class about @done(13-09-25 12:04)
     ✔ h1 crypto @done(13-09-25 12:04)
     ✔ add 3 paragraphs of static text @done(13-09-25 12:04)
@@ -35,3 +35,8 @@ Homepage:
 ✔ create simple header component for the navigation links @done(13-09-25 12:13)
 ✔ wrap the header around all the routes @done(13-09-25 12:13)
 ✔ add Link from react router to header@done(13-09-25 12:13)
+
+Coin-details-page:
+  ✔ create the route, make it dynamic with :id @done(13-09-25 16:43)
+  ✔ useParams from react router to get the value @done(13-09-25 16:43)
+  ✔ wrap coincard component in a Link to send user to details-apge @done(13-09-25 17:00)
