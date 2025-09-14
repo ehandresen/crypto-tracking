@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router';
 import Spinner from '../components/Spinner';
+import CoinChart from '../components/CoinChart';
 
 const API_URL = import.meta.env.VITE_COIN_API_URL;
 
@@ -53,72 +54,91 @@ const CoinDetailsPage = () => {
             alt={coin.name}
             className='coin-details-image'
           />
-          <p>{coin.description.en.split('. ')[0] + '.'}</p>
+          <p className='coin-description'>
+            {coin.description.en.split('. ')[0] + '.'}
+          </p>
 
           <div className='coin-details-info'>
-            <h3>Rank: #{coin.market_cap_rank}</h3>
-            <h3>
-              Current Price: $
+            <h2>Rank #{coin.market_cap_rank}</h2>
+            <p>
+              <strong>Current Price:</strong> $
               {coin.market_data.current_price.usd.toLocaleString()}
-            </h3>
-            <h4>
-              Market Cap: ${coin.market_data.market_cap.usd.toLocaleString()}
-            </h4>
+            </p>
+            <p>
+              <strong>Market Cap:</strong> $
+              {coin.market_data.market_cap.usd.toLocaleString()}
+            </p>
           </div>
 
           {/* --- Price Stats --- */}
           <div className='coin-details-info'>
             <h3>Price Statistics</h3>
-            <h4>24h High: ${coin.market_data.high_24h.usd.toLocaleString()}</h4>
-            <h4>24h Low: ${coin.market_data.low_24h.usd.toLocaleString()}</h4>
-            <h4>
-              24h Price Change: ${coin.market_data.price_change_24h.toFixed(2)}{' '}
-              ({coin.market_data.price_change_percentage_24h.toFixed(2)}%)
-            </h4>
-            <h4>
-              All-Time High: ${coin.market_data.ath.usd.toLocaleString()} on{' '}
-              {new Date(coin.market_data.ath_date.usd).toLocaleDateString()}
-            </h4>
-            <h4>
-              All-Time Low: ${coin.market_data.atl.usd.toLocaleString()} on{' '}
-              {new Date(coin.market_data.atl_date.usd).toLocaleDateString()}
-            </h4>
+            <p>
+              <strong>24h High:</strong> $
+              {coin.market_data.high_24h.usd.toLocaleString()}
+            </p>
+            <p>
+              <strong>24h Low:</strong> $
+              {coin.market_data.low_24h.usd.toLocaleString()}
+            </p>
+            <p>
+              <strong>24h Price Change:</strong> $
+              {coin.market_data.price_change_24h.toFixed(2)}(
+              {coin.market_data.price_change_percentage_24h.toFixed(2)}%)
+            </p>
+            <p>
+              <strong>All-Time High:</strong> $
+              {coin.market_data.ath.usd.toLocaleString()}
+              on {new Date(coin.market_data.ath_date.usd).toLocaleDateString()}
+            </p>
+            <p>
+              <strong>All-Time Low:</strong> $
+              {coin.market_data.atl.usd.toLocaleString()}
+              on {new Date(coin.market_data.atl_date.usd).toLocaleDateString()}
+            </p>
           </div>
 
-          {/* --- Supply Stats --- */}
+          {/* --- Supply --- */}
           <div className='coin-details-info'>
             <h3>Supply</h3>
-            <h4>
-              Circulating Supply:{' '}
+            <p>
+              <strong>Circulating:</strong>{' '}
               {coin.market_data.circulating_supply.toLocaleString()}
-            </h4>
-            <h4>
-              Total Supply:{' '}
+            </p>
+            <p>
+              <strong>Total:</strong>{' '}
               {coin.market_data.total_supply?.toLocaleString() || 'N/A'}
-            </h4>
-            <h4>
-              Max Supply:{' '}
+            </p>
+            <p>
+              <strong>Max:</strong>{' '}
               {coin.market_data.max_supply?.toLocaleString() || 'N/A'}
-            </h4>
+            </p>
           </div>
 
-          {/* --- Extra Info --- */}
-          <div className='coin-details-info'>
+          {/* --- Additional Info --- */}
+          <div className='coin-details-info' style={{ marginBottom: '20px' }}>
             <h3>Additional Info</h3>
-            <h4>
-              Genesis Date:{' '}
+            <p>
+              <strong>Genesis Date:</strong>{' '}
               {coin.genesis_date
                 ? new Date(coin.genesis_date).toLocaleDateString()
                 : 'Unknown'}
-            </h4>
-            <h4>
-              Sentiment: 👍 {coin.sentiment_votes_up_percentage}% | 👎{' '}
+            </p>
+            <p>
+              <strong>Sentiment:</strong> 👍{' '}
+              {coin.sentiment_votes_up_percentage}% | 👎{' '}
               {coin.sentiment_votes_down_percentage}%
-            </h4>
-            <h4>
-              GitHub Stars: ⭐{' '}
+            </p>
+            <p>
+              <strong>GitHub Stars:</strong> ⭐{' '}
               {formatGithubStars.format(coin.developer_data.stars)}
-            </h4>
+            </p>
+          </div>
+
+          {/* --- Chart --- */}
+          <div className='coin-details-info' style={{ marginBottom: '20px' }}>
+            <h3>Price Chart</h3>
+            <CoinChart coinId={coin.id} />
           </div>
 
           {/* --- Tickers --- */}
