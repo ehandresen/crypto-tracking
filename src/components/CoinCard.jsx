@@ -1,6 +1,13 @@
 import { Link } from 'react-router';
 
 function CoinCard({ coin }) {
+  function formatNumber(value) {
+    if (value >= 1e12) return `$${(value / 1e12).toFixed(1)}T`; // Values over 1 trillion
+    if (value >= 1e9) return `$${(value / 1e9).toFixed(1)}B`; // Values over 1 billion
+    if (value >= 1e6) return `$${(value / 1e6).toFixed(2)}M`; // Values over 1 million
+    return `$${value.toLocaleString()}`;
+  }
+
   return (
     <Link to={`coin/${coin.id}`}>
       <div className='coin-card' key={coin.id}>
@@ -9,10 +16,9 @@ function CoinCard({ coin }) {
           <div>
             <h2>{coin.name}</h2>
             <p className='symbol'>{coin.symbol.toUpperCase()}</p>
-            {/* <p className='rank'>Rank #{coin.market_cap_rank}</p> */}
           </div>
         </div>
-        <p>Price: ${coin.current_price.toLocaleString()}</p>
+        <p>Price: {formatNumber(coin.current_price)}</p>
         <p
           className={
             coin.price_change_percentage_24h >= 0 ? 'positive' : 'negative'
@@ -20,7 +26,7 @@ function CoinCard({ coin }) {
         >
           {coin.price_change_percentage_24h.toFixed(2)} %
         </p>
-        <p>Market Cap: {coin.market_cap.toLocaleString()}</p>
+        <p>Market Cap: {formatNumber(coin.market_cap)}</p>
       </div>
     </Link>
   );
