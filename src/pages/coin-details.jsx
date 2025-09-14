@@ -88,13 +88,13 @@ const CoinDetailsPage = () => {
             </p>
             <p>
               <strong>All-Time High:</strong> $
-              {coin.market_data.ath.usd.toLocaleString()}
-              on {new Date(coin.market_data.ath_date.usd).toLocaleDateString()}
+              {coin.market_data.ath.usd.toLocaleString()} on{' '}
+              {new Date(coin.market_data.ath_date.usd).toLocaleDateString()}
             </p>
             <p>
               <strong>All-Time Low:</strong> $
-              {coin.market_data.atl.usd.toLocaleString()}
-              on {new Date(coin.market_data.atl_date.usd).toLocaleDateString()}
+              {coin.market_data.atl.usd.toLocaleString()} on{' '}
+              {new Date(coin.market_data.atl_date.usd).toLocaleDateString()}
             </p>
           </div>
 

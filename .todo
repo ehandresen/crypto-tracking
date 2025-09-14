@@ -25,7 +25,7 @@ Homepage:
   ✔ cut filteredcoins logic from App to homapge @done(13-09-25 11:28)
   ✔ same with the whole return @done(13-09-25 11:29)
   ✔ add homepage route to App @done(13-09-25 11:41)
-  ☐ add placeholder text to searchinput @started(14-09-25 22:07)
+  ✔ add placeholder text to searchinput @started(14-09-25 22:07) @done(14-09-25 22:12) @lasted(5m41s)
   ✔ change market cap format @started(14-09-25 18:24) @done(14-09-25 18:52) @lasted(28m13s)
 
 Aboutpage:
@@ -42,4 +42,4 @@ Coin-details-page:
   ✔ create the route, make it dynamic with :id @done(13-09-25 16:43)
   ✔ useParams from react router to get the value @done(13-09-25 16:43)
   ✔ wrap coincard component in a Link to send user to details-apge @done(13-09-25 17:00)
-  ☐ add spacing before word 'on' in all time high and low stats
+  ✔ add spacing before word 'on' in all time high and low stats @started(14-09-25 22:12) @done(14-09-25 22:16) @lasted(4m9s)
